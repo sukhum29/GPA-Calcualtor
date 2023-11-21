@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>GPA Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>GPA Calculator</h1>
+        <div id="grades">
+            <label for="grade">Select Grade:</label>
+            <select id="grade">
+                <option value="10">O</option>
+                <option value="9">A+</option>
+                <option value="8">A</option>
+                <option value="7">B+</option>
+                <option value="6">B</option>
+                <option value="5">C</option>
+                <option value="0">F</option>
+            </select>
+        </div>
+        <div id="credits">
+            <label for="credit">Enter Credits:</label>
+            <input type="number" id="credit" min="1">
+        </div>
+        <button onclick="addCourse()">Add Course</button>
+        <div id="courseList"></div>
+        <div id="result"></div>
+        <button onclick="sendEmail()">Send Result</button>
+    </div>
+    <script src="script.js"></script>
+    <footer class="py-3 mt-20">
+        <p class="mb-0">Created by <a class="hello" href="https://github.com/sukhum29">SUKHUMJEET SINGH</a></p>
+    </footer>
+</body>
+</html>
