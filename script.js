@@ -1,33 +1,33 @@
-let totalCredits = 0;
-let totalGradePoints = 0;
+let totalcredit = 0;
+let totalgrade = 0;
 let courseCount = 0;
 
 function addCourse() {
-    const selectedGrade = parseFloat(document.getElementById("grade").value);
-    const enteredCredits = parseInt(document.getElementById("credit").value);
+    const Grade = parseFloat(document.getElementById("grade").value);
+    const Credit = parseInt(document.getElementById("credit").value);
 
-    if (isNaN(selectedGrade) || isNaN(enteredCredits) || enteredCredits <= 0) {
+    if (isNaN(Grade) || isNaN(Credit) || Credit <= 0) {
         alert("Please enter valid values.");
         return;
     }
 
-    const gradePoints = selectedGrade * enteredCredits;
-    totalCredits += enteredCredits;
-    totalGradePoints += gradePoints;
+    const gradePoints = Grade * Credit;
+    totalcredit += Credit;
+    totalgrade += gradePoints;
 
-    const currentGPA = totalGradePoints / totalCredits;
+    const currentGPA = totalgrade / totalcredit;
 
     courseCount++;
     const courseListDiv = document.getElementById("courseList");
     const courseDiv = document.createElement("div");
-    courseDiv.innerHTML = `<p>Course ${courseCount}: Grade - ${selectedGrade}, Credits - ${enteredCredits}</p>`;
+    courseDiv.innerHTML = `<p>Course ${courseCount}: Grade - ${Grade}, Credits - ${Credit}</p>`;
     courseListDiv.appendChild(courseDiv);
 
     document.getElementById("result").innerText = `Current GPA: ${currentGPA.toFixed(2)}`;
 }
 
 function sendEmail() {
-    const currentGPA = totalGradePoints / totalCredits;
+    const currentGPA = totalgrade / totalcredit;
     const recipientEmail = prompt("Enter your email address:");
     
     if (!recipientEmail || !validateEmail(recipientEmail)) {
